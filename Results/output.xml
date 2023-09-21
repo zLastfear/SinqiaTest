@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20230920 21:35:47.766" rpa="false" schemaversion="2">
+<suite id="s1" name="Testsuit" source="c:\Users\Anderson\Documents\TesteSinqia\SinqiaTest\tests\testsuit.robot">
+<test id="s1-t1" name="Efetuar Pesquisa Sem Retorno de Resultados">
+<kw name="Abrir Navegador" library="common" type="SETUP">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230920 21:35:48.023" level="INFO">Opening browser 'Chrome' to base url 'https://blogdoagi.com.br/'.</msg>
+<status status="PASS" starttime="20230920 21:35:48.022" endtime="20230920 21:35:50.755"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>25</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230920 21:35:50.756" endtime="20230920 21:35:50.758"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230920 21:35:50.758" endtime="20230920 21:35:50.878"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:48.022" endtime="20230920 21:35:50.878"/>
+</kw>
+<kw name="Verificar Logo Blog" library="homePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${txtAgi}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230920 21:35:50.880" endtime="20230920 21:35:50.909"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${txtAgi}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230920 21:35:50.942" level="INFO">Current page contains element 'css=#site-branding &gt; div &gt; a &gt; img'.</msg>
+<status status="PASS" starttime="20230920 21:35:50.909" endtime="20230920 21:35:50.944"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:50.879" endtime="20230920 21:35:50.944"/>
+</kw>
+<kw name="Clicar Botao Lupa" library="homePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btnLupaSearch}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230920 21:35:50.946" endtime="20230920 21:35:50.984"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btnLupaSearch}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230920 21:35:50.986" level="INFO">Clicking element 'id=search-open'.</msg>
+<status status="PASS" starttime="20230920 21:35:50.985" endtime="20230920 21:35:51.056"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:50.945" endtime="20230920 21:35:51.057"/>
+</kw>
+<kw name="Inserir Texto Campo Pesquisa" library="homePage">
+<arg>${txtPesquisaSemResultado}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputSearch}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230920 21:35:51.059" endtime="20230920 21:35:51.097"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputSearch}</arg>
+<arg>${txt}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230920 21:35:51.099" level="INFO">Typing text 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua' into text field 'css=#masthead &gt; div.site-header-content &gt; div.desktop-search &gt; form &gt; label &gt; input'.</msg>
+<status status="PASS" starttime="20230920 21:35:51.098" endtime="20230920 21:35:51.337"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btnPesquisar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230920 21:35:51.338" level="INFO">Clicking element 'css=#masthead &gt; div.site-header-content &gt; div.desktop-search &gt; form &gt; input'.</msg>
+<status status="PASS" starttime="20230920 21:35:51.338" endtime="20230920 21:35:51.823"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:51.058" endtime="20230920 21:35:51.823"/>
+</kw>
+<kw name="Verificar Pesquisa Sem Resultados" library="resultsPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${txtNenhumResultado}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230920 21:35:51.825" endtime="20230920 21:35:51.852"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${txtSemResultados}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230920 21:35:51.867" level="INFO">Current page contains text 'Nenhum resultado'.</msg>
+<status status="PASS" starttime="20230920 21:35:51.853" endtime="20230920 21:35:51.868"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:51.824" endtime="20230920 21:35:51.869"/>
+</kw>
+<kw name="Fechar Navegador" library="common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230920 21:35:51.870" endtime="20230920 21:35:54.025"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:51.870" endtime="20230920 21:35:54.025"/>
+</kw>
+<doc>Caso de teste para verificar como o sistema se comporta no caso de uma pesquisa que não tenha nenhum resultado a ser apresentado</doc>
+<status status="PASS" starttime="20230920 21:35:48.020" endtime="20230920 21:35:54.026"/>
+</test>
+<test id="s1-t2" name="Efetuar Pesquisa Com Resultado Especifico">
+<kw name="Abrir Navegador" library="common" type="SETUP">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230920 21:35:54.030" level="INFO">Opening browser 'Chrome' to base url 'https://blogdoagi.com.br/'.</msg>
+<status status="PASS" starttime="20230920 21:35:54.029" endtime="20230920 21:35:56.814"/>
+</kw>
+<kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
+<arg>25</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20230920 21:35:56.815" endtime="20230920 21:35:56.816"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230920 21:35:56.816" endtime="20230920 21:35:56.948"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:54.028" endtime="20230920 21:35:56.949"/>
+</kw>
+<kw name="Verificar Logo Blog" library="homePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${txtAgi}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230920 21:35:56.953" endtime="20230920 21:35:57.031"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${txtAgi}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20230920 21:35:57.052" level="INFO">Current page contains element 'css=#site-branding &gt; div &gt; a &gt; img'.</msg>
+<status status="PASS" starttime="20230920 21:35:57.032" endtime="20230920 21:35:57.052"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:56.951" endtime="20230920 21:35:57.053"/>
+</kw>
+<kw name="Clicar Botao Lupa" library="homePage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btnLupaSearch}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230920 21:35:57.054" endtime="20230920 21:35:57.083"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btnLupaSearch}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230920 21:35:57.084" level="INFO">Clicking element 'id=search-open'.</msg>
+<status status="PASS" starttime="20230920 21:35:57.084" endtime="20230920 21:35:57.152"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:57.053" endtime="20230920 21:35:57.153"/>
+</kw>
+<kw name="Inserir Texto Campo Pesquisa" library="homePage">
+<arg>${txtPesquisaEspecifica}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${inputSearch}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230920 21:35:57.155" endtime="20230920 21:35:57.189"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${inputSearch}</arg>
+<arg>${txt}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230920 21:35:57.190" level="INFO">Typing text 'Programa de estágio do Agi terá vagas para todas áreas; veja como se candidatar.' into text field 'css=#masthead &gt; div.site-header-content &gt; div.desktop-search &gt; form &gt; label &gt; input'.</msg>
+<status status="PASS" starttime="20230920 21:35:57.189" endtime="20230920 21:35:57.398"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btnPesquisar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230920 21:35:57.399" level="INFO">Clicking element 'css=#masthead &gt; div.site-header-content &gt; div.desktop-search &gt; form &gt; input'.</msg>
+<status status="PASS" starttime="20230920 21:35:57.398" endtime="20230920 21:35:57.773"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:57.154" endtime="20230920 21:35:57.774"/>
+</kw>
+<kw name="Verificar Pesquisa Com Resultado Especifico" library="resultsPage">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${txtPesquisaEspecifica}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20230920 21:35:57.776" endtime="20230920 21:35:57.796"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${txtPesquisaEspecifica}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20230920 21:35:57.808" level="INFO">Current page contains text 'Programa de estágio do Agi terá vagas para todas áreas; veja como se candidatar.'.</msg>
+<status status="PASS" starttime="20230920 21:35:57.796" endtime="20230920 21:35:57.808"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:57.775" endtime="20230920 21:35:57.809"/>
+</kw>
+<kw name="Fechar Navegador" library="common" type="TEARDOWN">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20230920 21:35:57.811" endtime="20230920 21:35:59.955"/>
+</kw>
+<status status="PASS" starttime="20230920 21:35:57.810" endtime="20230920 21:35:59.955"/>
+</kw>
+<doc>Caso de teste para verificar se o sistema retornará o resultado esperado para uma pesquisa especifica</doc>
+<status status="PASS" starttime="20230920 21:35:54.028" endtime="20230920 21:35:59.956"/>
+</test>
+<status status="PASS" starttime="20230920 21:35:47.771" endtime="20230920 21:35:59.958"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Testsuit">Testsuit</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
